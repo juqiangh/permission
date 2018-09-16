@@ -10,9 +10,9 @@
     <!-- 启动注解驱动的spring mvc 功能 -->
     <mvc:annotation-driven/>
 
-    <!--<mvc:interceptors>
-        <bean class="com.mmall.common.HttpInterceptor" />
-    </mvc:interceptors>-->
+    <mvc:interceptors>
+        <bean class="com.learning.common.HttpInterceptor" />
+    </mvc:interceptors>
 
     <!-- 启动包扫描功能 -->
     <context:component-scan base-package="com.learning.controller" />
@@ -24,14 +24,15 @@
     <mvc:resources location="/assets/" mapping="/assets/**"/>
     <mvc:resources location="/ztree/" mapping="/ztree/**"/>
 
-    <!--<bean class="com.learning.common.ApplicationContextHelper" lazy-init="false" />-->
+    <bean class="com.learning.common.ApplicationContextHelper" lazy-init="false" />
 
-    <!--<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" />-->
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping" />
 
-    <!--<bean class="com.learning.common.SpringExceptionResolver" />-->
+    <bean class="com.learning.common.SpringExceptionResolver" />
 
     <bean class="org.springframework.web.servlet.view.BeanNameViewResolver" />
 
+    <!-- 返回类型json处理 -->
     <bean id="jsonView" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView" />
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
