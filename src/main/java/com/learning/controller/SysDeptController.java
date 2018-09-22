@@ -1,14 +1,19 @@
 package com.learning.controller;
 
 import com.learning.common.JsonData;
+import com.learning.dto.DeptLevelDto;
 import com.learning.param.DeptParam;
 import com.learning.service.SysDeptService;
+import com.learning.service.SysTreeService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @RestController
 @RequestMapping("/sys/dept")
@@ -18,7 +23,15 @@ public class SysDeptController {
     @Resource
     private SysDeptService sysDeptService;
 
-    @GetMapping("/save.json")
+    @Resource
+    private SysTreeService sysTreeService;
+
+    @GetMapping("/dept.page")
+    public ModelAndView page(){
+        return new ModelAndView("dept");
+    }
+
+    @PostMapping("/save.json")
     public JsonData saveDept(DeptParam param) {
         sysDeptService.save(param);
         return JsonData.success();
@@ -26,6 +39,13 @@ public class SysDeptController {
 
     @GetMapping("/tree.json")
     public JsonData tree () {
+        List<DeptLevelDto> dtoList = sysTreeService.deptTree();
+        return JsonData.success(dtoList);
+    }
+
+    @PostMapping("/update.json")
+    public JsonData updateDept(DeptParam param) {
+        sysDeptService.update(param);
         return JsonData.success();
     }
 }

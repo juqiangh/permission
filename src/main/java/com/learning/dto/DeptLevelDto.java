@@ -15,7 +15,7 @@ import java.util.List;
 @ToString
 public class DeptLevelDto extends SysDept{
 
-    private List<DeptLevelDto> deptLevelDtoList = Lists.newArrayList();
+    private List<DeptLevelDto> deptList = Lists.newArrayList();
 
     public static DeptLevelDto adopt(SysDept dept){
         DeptLevelDto deptLevelDto = new DeptLevelDto();
