@@ -34,10 +34,8 @@ public class SysDeptServiceImpl implements SysDeptService{
         SysDept sysDept = SysDept.builder().name(param.getName()).parentId(param.getParentId()).seq(param.getSeq())
                 .remark(param.getRemark()).build();
         sysDept.setLevel(LevelUtil.calculateLevel(getLevel(param.getParentId()), param.getParentId()));
-        //sysDept.setOperator(RequestHolder.getCurrentUser().getUsername());
-        sysDept.setOperator("Admin");
-        //sysDept.setOperateIp(IpUtil.getRemoteIp(RequestHolder.getCurrentRequest()));
-        sysDept.setOperateIp("127.0.0.1");
+        sysDept.setOperator(RequestHolder.getCurrentUser().getUsername());
+        sysDept.setOperateIp(IpUtil.getRemoteIp(RequestHolder.getCurrentRequest()));
         sysDept.setOperateTime(new Date());
         sysDeptMapper.insertSelective(sysDept);
     }
@@ -54,8 +52,8 @@ public class SysDeptServiceImpl implements SysDeptService{
         SysDept after = SysDept.builder().id(param.getId()).name(param.getName()).parentId(param.getParentId())
                 .seq(param.getSeq()).remark(param.getRemark()).build();
         after.setLevel(LevelUtil.calculateLevel(getLevel(param.getParentId()), param.getParentId()));
-        after.setOperator("Admin");//TODO
-        after.setOperateIp("127.0.0.1");//TODO
+        after.setOperator(RequestHolder.getCurrentUser().getUsername());
+        after.setOperateIp(IpUtil.getRemoteIp(RequestHolder.getCurrentRequest()));
         after.setOperateTime(new Date());
 
         updateWithChild(before, after);
