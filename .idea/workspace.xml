@@ -7,14 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a695675-d7ff-438b-90b5-175f7f5bd2db" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learning/dao/SysAclMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/learning/dao/SysAclMapper.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learning/dao/SysAclModuleMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/learning/dao/SysAclModuleMapper.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learning/model/SysAcl.java" afterPath="$PROJECT_DIR$/src/main/java/com/learning/model/SysAcl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learning/model/SysAclModule.java" afterPath="$PROJECT_DIR$/src/main/java/com/learning/model/SysAclModule.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learning/service/SysTreeService.java" afterPath="$PROJECT_DIR$/src/main/java/com/learning/service/SysTreeService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/learning/service/impl/SysTreeServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/learning/service/impl/SysTreeServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/SysAclMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/SysAclMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/SysAclModuleMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/SysAclModuleMapper.xml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/learning/dao/SysRoleMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/learning/dao/SysRoleMapper.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/learning/model/SysRole.java" afterPath="$PROJECT_DIR$/src/main/java/com/learning/model/SysRole.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/SysRoleMapper.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/SysRoleMapper.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,63 +21,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SysAclController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/controller/SysAclController.java">
+      <file leaf-file-name="SysRoleController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/controller/SysRoleController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="39" column="92" lean-forward="true" selection-start-line="39" selection-start-column="92" selection-end-line="39" selection-end-column="92" />
+            <state relative-caret-position="435">
+              <caret line="31" column="49" lean-forward="true" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#612#613#0" expanded="true" />
+                <element signature="e#659#660#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SysAclModuleController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/controller/SysAclModuleController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="47" column="62" lean-forward="true" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="62" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#785#786#0" expanded="true" />
-                <element signature="e#831#832#0" expanded="true" />
-                <element signature="e#1339#1340#0" expanded="true" />
-                <element signature="e#1410#1411#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SysTreeServiceImpl.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/service/impl/SysTreeServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="50" column="96" lean-forward="false" selection-start-line="50" selection-start-column="96" selection-end-line="50" selection-end-column="96" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AclParam.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/param/AclParam.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="14" column="9" lean-forward="false" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SysAclService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/service/SysAclService.java">
+      <file leaf-file-name="SysRoleService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/service/SysRoleService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="312">
-              <caret line="13" column="77" lean-forward="false" selection-start-line="13" selection-start-column="77" selection-end-line="13" selection-end-column="77" />
+              <caret line="13" column="27" lean-forward="false" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -90,42 +47,40 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SysAclServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/service/impl/SysAclServiceImpl.java">
+      <file leaf-file-name="SysRoleServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/service/impl/SysRoleServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="62" column="83" lean-forward="false" selection-start-line="62" selection-start-column="83" selection-end-line="62" selection-end-column="83" />
+            <state relative-caret-position="513">
+              <caret line="51" column="33" lean-forward="true" selection-start-line="51" selection-start-column="11" selection-end-line="51" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2795#2803#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SysAclMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SysAclMapper.xml">
+      <file leaf-file-name="SysRoleMapper.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SysRoleMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="470">
-              <caret line="199" column="11" lean-forward="false" selection-start-line="199" selection-start-column="11" selection-end-line="199" selection-end-column="11" />
+            <state relative-caret-position="714">
+              <caret line="140" column="11" lean-forward="false" selection-start-line="140" selection-start-column="11" selection-end-line="140" selection-end-column="11" />
               <folding>
-                <marker date="1537767491959" expanded="true" signature="1346:1449" ph="select from sys_acl" />
-                <marker date="1537767491959" expanded="true" signature="1536:1593" ph="delete from sys_acl... " />
-                <marker date="1537767491959" expanded="true" signature="1676:2200" ph="insert into sys_acl... " />
-                <marker date="1537767491959" expanded="true" signature="4284:5374" ph="update sys_acl... " />
-                <marker date="1537767491959" expanded="true" signature="5469:6007" ph="update sys_acl... " />
-                <marker date="1537767491959" expanded="true" signature="6349:6422" ph="SELECT count... sys_acl" />
-                <marker date="1537767491959" expanded="true" signature="6523:6698" ph="SELECT FROM sys_acl" />
+                <marker date="1537770051135" expanded="true" signature="1044:1148" ph="select from sys_role" />
+                <marker date="1537770051135" expanded="true" signature="1235:1293" ph="delete from sys_role... " />
+                <marker date="1537770051135" expanded="true" signature="1377:1734" ph="insert into sys_role... " />
+                <marker date="1537770051135" expanded="true" signature="3255:3989" ph="update sys_role... " />
+                <marker date="1537770051135" expanded="true" signature="4085:4456" ph="update sys_role... " />
+                <marker date="1537770051135" expanded="true" signature="4523:4584" ph="SELECT FROM sys_role" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SysAclMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/dao/SysAclMapper.java">
+      <file leaf-file-name="SysRoleMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/dao/SysRoleMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="25" column="101" lean-forward="false" selection-start-line="25" selection-start-column="101" selection-end-line="25" selection-end-column="101" />
+            <state relative-caret-position="528">
+              <caret line="22" column="73" lean-forward="false" selection-start-line="22" selection-start-column="73" selection-end-line="22" selection-end-column="73" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -166,13 +121,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/learning/common/ApplicationContextHelper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/learning/controller/TestController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/learning/model/SysDept.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/learning/util/LevelUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/learning/common/RequestHolder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/learning/util/IpUtil.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/learning/service/SysDeptService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/mapper/SysDeptMapper.xml" />
@@ -217,6 +165,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/learning/controller/SysAclController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/learning/controller/SysAclModuleController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/learning/service/impl/SysTreeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/learning/param/RoleParam.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/SysRoleMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/learning/dao/SysRoleMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/learning/model/SysRole.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/learning/service/impl/SysRoleServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/learning/service/SysRoleService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/learning/controller/SysRoleController.java" />
       </list>
     </option>
   </component>
@@ -822,12 +777,12 @@
       <workItem from="1537367468259" duration="102000" />
       <workItem from="1537367968247" duration="2159000" />
       <workItem from="1537599677387" duration="1883000" />
-      <workItem from="1537684483944" duration="17387000" />
+      <workItem from="1537684483944" duration="18925000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73055000" />
+    <option name="totallyTimeSpent" value="74593000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -918,61 +873,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/common.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/common/page.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/role.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/spring-servlet.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="13" column="50" lean-forward="false" selection-start-line="13" selection-start-column="50" selection-end-line="13" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/dept.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12408">
-          <caret line="517" column="78" lean-forward="false" selection-start-line="517" selection-start-column="67" selection-end-line="517" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/dto/DeptLevelDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="17" column="39" lean-forward="false" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/controller/SysDeptController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -1347,7 +1247,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SysAclMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="470">
+        <state relative-caret-position="594">
           <caret line="199" column="11" lean-forward="false" selection-start-line="199" selection-start-column="11" selection-end-line="199" selection-end-column="11" />
           <folding>
             <marker date="1537767491959" expanded="true" signature="1346:1449" ph="select from sys_acl" />
@@ -1363,7 +1263,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/dao/SysAclMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
+        <state relative-caret-position="600">
           <caret line="25" column="101" lean-forward="false" selection-start-line="25" selection-start-column="101" selection-end-line="25" selection-end-column="101" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1373,7 +1273,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/service/impl/SysAclServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
+        <state relative-caret-position="291">
           <caret line="62" column="83" lean-forward="false" selection-start-line="62" selection-start-column="83" selection-end-line="62" selection-end-column="83" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1408,10 +1308,87 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/service/impl/SysTreeServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="50" column="96" lean-forward="false" selection-start-line="50" selection-start-column="96" selection-end-line="50" selection-end-column="96" />
+        <state relative-caret-position="519">
+          <caret line="58" column="67" lean-forward="true" selection-start-line="58" selection-start-column="67" selection-end-line="58" selection-end-column="67" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/param/RoleParam.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="33" column="26" lean-forward="false" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SysRoleMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="140" column="11" lean-forward="false" selection-start-line="140" selection-start-column="11" selection-end-line="140" selection-end-column="11" />
+          <folding>
+            <marker date="1537770051135" expanded="true" signature="1044:1148" ph="select from sys_role" />
+            <marker date="1537770051135" expanded="true" signature="1235:1293" ph="delete from sys_role... " />
+            <marker date="1537770051135" expanded="true" signature="1377:1734" ph="insert into sys_role... " />
+            <marker date="1537770051135" expanded="true" signature="3255:3989" ph="update sys_role... " />
+            <marker date="1537770051135" expanded="true" signature="4085:4456" ph="update sys_role... " />
+            <marker date="1537770051135" expanded="true" signature="4523:4584" ph="SELECT FROM sys_role" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/dao/SysRoleMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="22" column="73" lean-forward="false" selection-start-line="22" selection-start-column="73" selection-end-line="22" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/model/SysRole.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="10" column="18" lean-forward="false" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/service/impl/SysRoleServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="51" column="33" lean-forward="true" selection-start-line="51" selection-start-column="11" selection-end-line="51" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/service/SysRoleService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="13" column="27" lean-forward="false" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/learning/controller/SysRoleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="31" column="49" lean-forward="true" selection-start-line="31" selection-start-column="49" selection-end-line="31" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#612#613#0" expanded="true" />
+            <element signature="e#659#660#0" expanded="true" />
           </folding>
         </state>
       </provider>
