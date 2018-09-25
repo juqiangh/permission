@@ -24,4 +24,8 @@ public interface SysAclMapper {
     int countByAclModuleId(@Param("aclModuleId") int aclModuleId);
 
     List<SysAcl> getPageByAclModuleId(@Param("aclModuleId") int aclModuleId, @Param("page") PageQuery page);
+
+    List<SysAcl> getAll();
+
+    List<SysAcl> getByIdList(@Param("idList") List<Integer> idList);
 }

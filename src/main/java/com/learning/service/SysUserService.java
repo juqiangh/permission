@@ -5,6 +5,8 @@ import com.learning.beans.PageResult;
 import com.learning.model.SysUser;
 import com.learning.param.UserParam;
 
+import java.util.List;
+
 public interface SysUserService {
 
     void save(UserParam userParam);
@@ -14,4 +16,6 @@ public interface SysUserService {
     SysUser findByKeyword(String keyword);
 
     PageResult<SysUser> getPageByDeptId(int deptId, PageQuery page);
+
+    List<SysUser> getAll();
 }

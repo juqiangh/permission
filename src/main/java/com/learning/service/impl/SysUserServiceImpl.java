@@ -81,6 +81,10 @@ public class SysUserServiceImpl implements SysUserService {
         return PageResult.<SysUser>builder().build();
     }
 
+    public List<SysUser> getAll() {
+        return sysUserMapper.getAll();
+    }
+
     private boolean checkTelephoneExist(String telephone, Integer userId) {
         return sysUserMapper.countByTelephone(telephone, userId) > 0;
     }

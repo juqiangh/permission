@@ -1,6 +1,9 @@
 package com.learning.dao;
 
 import com.learning.model.SysRoleUser;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface SysRoleUserMapper {
     int deleteByPrimaryKey(Integer id);
@@ -14,4 +17,12 @@ public interface SysRoleUserMapper {
     int updateByPrimaryKeySelective(SysRoleUser record);
 
     int updateByPrimaryKey(SysRoleUser record);
+
+    List<Integer> getRoleIdListByUserId(@Param("userId") int userId);
+
+    List<Integer> getUserIdListByRoleId(@Param("roleId") int roleId);
+
+    void deleteByRoleId(@Param("roleId") int roleId);
+
+    void batchInsert(@Param("roleUserList") List<SysRoleUser> roleUserList);
 }
