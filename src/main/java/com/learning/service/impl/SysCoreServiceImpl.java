@@ -1,18 +1,25 @@
 package com.learning.service.impl;
 
 import com.google.common.collect.Lists;
+import com.learning.beans.CacheKeyConstants;
 import com.learning.common.RequestHolder;
 import com.learning.dao.SysAclMapper;
 import com.learning.dao.SysRoleAclMapper;
 import com.learning.dao.SysRoleUserMapper;
 import com.learning.model.SysAcl;
 import com.learning.model.SysUser;
+import com.learning.service.SysCacheService;
 import com.learning.service.SysCoreService;
+import com.learning.util.JsonMapper;
 import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.codehaus.jackson.type.TypeReference;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class SysCoreServiceImpl implements SysCoreService {
@@ -25,6 +32,9 @@ public class SysCoreServiceImpl implements SysCoreService {
 
     @Resource
     private SysRoleAclMapper sysRoleAclMapper;
+
+    @Resource
+    private SysCacheService sysCacheService;
 
     public List<SysAcl> getCurrentUserAclList() {
         int userId = RequestHolder.getCurrentUser().getId();
@@ -39,7 +49,7 @@ public class SysCoreServiceImpl implements SysCoreService {
         return sysAclMapper.getByIdList(aclIdList);
     }
 
-    private List<SysAcl> getUserAclList(int userId) {
+    public List<SysAcl> getUserAclList(int userId) {
         if (isSuperAdmin()) {
             return sysAclMapper.getAll();
         }
@@ -52,6 +62,50 @@ public class SysCoreServiceImpl implements SysCoreService {
             return Lists.newArrayList();
         }
         return sysAclMapper.getByIdList(userAclIdList);
+    }
+
+    public boolean hasUrlAcl(String url) {
+        /*if (isSuperAdmin()) {
+            return true;
+        }*/
+        List<SysAcl> aclList = sysAclMapper.getByUrl(url);
+        if (CollectionUtils.isEmpty(aclList)) {
+            return true;
+        }
+
+        List<SysAcl> userAclList = getCurrentUserAclListFromCache();
+        Set<Integer> userAclIdSet = userAclList.stream().map(acl -> acl.getId()).collect(Collectors.toSet());
+
+        boolean hasValidAcl = false;
+        // 规则：只要有一个权限点有权限，那么我们就认为有访问权限
+        for (SysAcl acl : aclList) {
+            // 判断一个用户是否具有某个权限点的访问权限
+            if (acl == null || acl.getStatus() != 1) { // 权限点无效
+                continue;
+            }
+            hasValidAcl = true;
+            if (userAclIdSet.contains(acl.getId())) {
+                return true;
+            }
+        }
+        if (!hasValidAcl) {
+            return true;
+        }
+        return false;
+    }
+
+    private List<SysAcl> getCurrentUserAclListFromCache() {
+        int userId = RequestHolder.getCurrentUser().getId();
+        String cacheValue = sysCacheService.getFromCache(CacheKeyConstants.USER_ACLS, String.valueOf(userId));
+        if (StringUtils.isBlank(cacheValue)) {
+            List<SysAcl> aclList = getCurrentUserAclList();
+            if (CollectionUtils.isNotEmpty(aclList)) {
+                sysCacheService.saveCache(JsonMapper.obj2String(aclList), 600, CacheKeyConstants.USER_ACLS, String.valueOf(userId));
+            }
+            return aclList;
+        }
+        return JsonMapper.string2Object(cacheValue, new TypeReference<List<SysAcl>>() {
+        });
     }
 
     private boolean isSuperAdmin() {

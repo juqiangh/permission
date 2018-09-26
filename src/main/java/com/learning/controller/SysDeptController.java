@@ -6,10 +6,7 @@ import com.learning.param.DeptParam;
 import com.learning.service.SysDeptService;
 import com.learning.service.SysTreeService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
@@ -46,6 +43,13 @@ public class SysDeptController {
     @PostMapping("/update.json")
     public JsonData updateDept(DeptParam param) {
         sysDeptService.update(param);
+        return JsonData.success();
+    }
+
+    @RequestMapping("/delete.json")
+    @ResponseBody
+    public JsonData delete(@RequestParam("id") int id) {
+        sysDeptService.delete(id);
         return JsonData.success();
     }
 }
