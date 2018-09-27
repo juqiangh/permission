@@ -9,6 +9,7 @@ import com.learning.exception.ParamException;
 import com.learning.model.SysAcl;
 import com.learning.param.AclParam;
 import com.learning.service.SysAclService;
+import com.learning.service.SysLogService;
 import com.learning.util.BeanValidator;
 import com.learning.util.IpUtil;
 import org.springframework.stereotype.Service;
@@ -24,6 +25,9 @@ public class SysAclServiceImpl implements SysAclService {
     @Resource
     private SysAclMapper sysAclMapper;
 
+    @Resource
+    private SysLogService sysLogService;
+
     public void save(AclParam param) {
         BeanValidator.check(param);
         if (checkExist(param.getAclModuleId(), param.getName(), param.getId())) {
@@ -37,6 +41,7 @@ public class SysAclServiceImpl implements SysAclService {
         acl.setOperateIp(IpUtil.getRemoteIp(RequestHolder.getCurrentRequest()));
 
         sysAclMapper.insertSelective(acl);
+        sysLogService.saveAclLog(null, acl);
     }
 
     public void update(AclParam param) {
@@ -53,6 +58,7 @@ public class SysAclServiceImpl implements SysAclService {
         after.setOperateIp(IpUtil.getRemoteIp(RequestHolder.getCurrentRequest()));
 
         sysAclMapper.updateByPrimaryKeySelective(after);
+        sysLogService.saveAclLog(before, after);
     }
 
     public PageResult<SysAcl> getPageByAclModuleId(int aclModuleId, PageQuery page) {

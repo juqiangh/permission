@@ -9,6 +9,7 @@ import com.learning.exception.ParamException;
 import com.learning.model.SysDept;
 import com.learning.param.DeptParam;
 import com.learning.service.SysDeptService;
+import com.learning.service.SysLogService;
 import com.learning.util.BeanValidator;
 import com.learning.util.IpUtil;
 import com.learning.util.LevelUtil;
@@ -31,6 +32,9 @@ public class SysDeptServiceImpl implements SysDeptService{
     @Resource
     private SysUserMapper sysUserMapper;
 
+    @Resource
+    private SysLogService sysLogService;
+
     public void save(DeptParam param) {
         BeanValidator.check(param);
         if(checkExist(param.getParentId(), param.getName(), param.getId())){
@@ -43,6 +47,7 @@ public class SysDeptServiceImpl implements SysDeptService{
         sysDept.setOperateIp(IpUtil.getRemoteIp(RequestHolder.getCurrentRequest()));
         sysDept.setOperateTime(new Date());
         sysDeptMapper.insertSelective(sysDept);
+        sysLogService.saveDeptLog(null, sysDept);
     }
 
     public void update(DeptParam param) {
@@ -62,6 +67,7 @@ public class SysDeptServiceImpl implements SysDeptService{
         after.setOperateTime(new Date());
 
         updateWithChild(before, after);
+        sysLogService.saveDeptLog(before, after);
     }
 
     @Transactional

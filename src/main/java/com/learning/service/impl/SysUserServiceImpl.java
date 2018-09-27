@@ -8,6 +8,7 @@ import com.learning.dao.SysUserMapper;
 import com.learning.exception.ParamException;
 import com.learning.model.SysUser;
 import com.learning.param.UserParam;
+import com.learning.service.SysLogService;
 import com.learning.service.SysUserService;
 import com.learning.util.BeanValidator;
 import com.learning.util.IpUtil;
@@ -24,6 +25,9 @@ public class SysUserServiceImpl implements SysUserService {
 
     @Resource
     private SysUserMapper sysUserMapper;
+
+    @Resource
+    private SysLogService sysLogService;
 
     public void save(UserParam param) {
         BeanValidator.check(param);
@@ -46,6 +50,7 @@ public class SysUserServiceImpl implements SysUserService {
 
         // TODO: sendEmail
         sysUserMapper.insertSelective(user);
+        sysLogService.saveUserLog(null, user);
     }
 
     public void update(UserParam param) {
@@ -65,6 +70,7 @@ public class SysUserServiceImpl implements SysUserService {
         after.setOperateIp(IpUtil.getRemoteIp(RequestHolder.getCurrentRequest()));
         after.setOperateTime(new Date());
         sysUserMapper.updateByPrimaryKeySelective(after);
+        sysLogService.saveUserLog(before, after);
     }
 
     public SysUser findByKeyword(String keyword) {

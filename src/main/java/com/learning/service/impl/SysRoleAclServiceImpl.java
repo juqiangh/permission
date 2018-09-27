@@ -2,11 +2,15 @@ package com.learning.service.impl;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
+import com.learning.beans.LogType;
 import com.learning.common.RequestHolder;
+import com.learning.dao.SysLogMapper;
 import com.learning.dao.SysRoleAclMapper;
+import com.learning.model.SysLogWithBLOBs;
 import com.learning.model.SysRoleAcl;
 import com.learning.service.SysRoleAclService;
 import com.learning.util.IpUtil;
+import com.learning.util.JsonMapper;
 import org.apache.commons.collections.CollectionUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,6 +26,9 @@ public class SysRoleAclServiceImpl implements SysRoleAclService {
     @Resource
     private SysRoleAclMapper sysRoleAclMapper;
 
+    @Resource
+    private SysLogMapper sysLogMapper;
+
     public void changeRoleAcls(Integer roleId, List<Integer> aclIdList) {
         List<Integer> originAclIdList = sysRoleAclMapper.getAclIdListByRoleIdList(Lists.newArrayList(roleId));
         if(originAclIdList.size() == aclIdList.size()) {
@@ -33,6 +40,7 @@ public class SysRoleAclServiceImpl implements SysRoleAclService {
             }
         }
         updateRoleAcls(roleId, aclIdList);
+        saveRoleAclLog(roleId, originAclIdList, aclIdList);
     }
 
     @Transactional
@@ -49,6 +57,19 @@ public class SysRoleAclServiceImpl implements SysRoleAclService {
             roleAclList.add(roleAcl);
         }
         sysRoleAclMapper.batchInsert(roleAclList);
+    }
+
+    private void saveRoleAclLog(int roleId, List<Integer> before, List<Integer> after) {
+        SysLogWithBLOBs sysLog = new SysLogWithBLOBs();
+        sysLog.setType(LogType.TYPE_ROLE_ACL);
+        sysLog.setTargetId(roleId);
+        sysLog.setOldValue(before == null ? "" : JsonMapper.obj2String(before));
+        sysLog.setNewValue(after == null ? "" : JsonMapper.obj2String(after));
+        sysLog.setStatus(1);
+        sysLog.setOperator(RequestHolder.getCurrentUser().getUsername());
+        sysLog.setOperateIp(IpUtil.getRemoteIp(RequestHolder.getCurrentRequest()));
+        sysLog.setOperateTime(new Date());
+        sysLogMapper.insertSelective(sysLog);
     }
 
 }
